@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LeadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('get-leads', [LeadController::class, 'get_leads'])
+    ->name('leads.get-leads');
+Route::get('get-persons', [LeadController::class, 'get_persons'])
+    ->name('leads.get-persons');
